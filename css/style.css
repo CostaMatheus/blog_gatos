@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 6.25%;
+
+  --color-primary-400: #065E7C;
+  --color-primary-300: rgba(255, 255, 255, .2);
+}
+
+body{
+  font-size: 16rem;
+  font-family: 'Mulish', sans-serif;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+.container{
+  max-width: 1222px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'main'
+  'sidebar'
+  'footer'                      ;
+}
+
+.menu{
+  grid-area: header;
+  padding: 12rem 24rem;
+  background-color: var(--color-primary-400);
+}
+
+nav{
+  max-width: 1222px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rem;
+}
+
+.menu form{
+  flex: 1;
+}
+
+.input-wrapper label{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input{
+  padding: 12rem 14rem;
+  background-color: var(--color-primary-300);
+  border: none;
+  border-radius: 4rem;
+  width: 100%;
+  color: white;
+}
+
+.input-wrapper input::placeholder{
+  color: white;
+}
+
+.input-wrapper input:focus{
+  border: 1px solid var(--color-primary-300);
+  outline: none;
+}
+
+main{
+  grid-area: main;
+}
+
+main header{
+  padding:32rem 24rem;
+}
+
+h1, h2{
+  font-size: 24rem;
+  line-height: 32rem;
+  margin-bottom:8rem;
+}
+
+main p{
+  font-size: 16rem;
+  line-height: 28rem;
+  padding-inline: 24rem;
+  margin-bottom: 32rem;
+}
+
+main p + p{
+  margin-bottom: 0;
+}
+
+
+.rate-buttons{
+  display: flex;
+  gap: 12rem;
+}
+
+aside{
+  grid-area: sidebar;
+  padding: 32rem 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+}
+
+.item{
+  display: flex;
+  gap: 16rem;
+}
+
+.item img{
+  object-fit: contain;
+}
+
+.details h3{
+  font-size: 18rem;
+  line-height: 26rem;
+}
+
+.details p{
+  font-size: 14rem;
+  line-height: 26rem;
+}
+
+footer{
+  grid-area: footer;
+  padding: 24rem;
+  background-color: var(--color-primary-400);
+  text-align: center;
+  color: white;
+}
+
+@media(min-width:992px){
+  .container{
+    max-width: 1222px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'main sidebar'
+    'footer footer';
+    column-gap: 32rem;
+    padding-inline: 32rem;                     ;
+  }
+
+
+  main{
+    padding: 32rem 0;
+  }
+
+  aside{
+    padding: 32rem 0;
+  }
+
+  main header{
+    padding:32rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main p{
+    padding: 0;
+  }
+  main p + p{
+    margin-bottom: 32rem;
+  }
+
+  .item img{
+    object-fit: cover;
+  }
+}
